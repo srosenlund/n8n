@@ -1,6 +1,10 @@
 #!/bin/bash
 set -e
 
+echo "🔧 Forcing Node 20.19.1..."
+export PATH="/opt/render/project/.nodebrew/node/v20.19.1/bin:$PATH"
+node -v
+
 echo "🔧 Enabling Corepack and setting pnpm version..."
 corepack enable
 corepack prepare pnpm@8.15.0 --activate
