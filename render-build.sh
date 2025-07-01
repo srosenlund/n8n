@@ -12,7 +12,8 @@ corepack prepare pnpm@8.15.0 --activate
 echo "🔄 Installing dependencies with frozen lockfile..."
 pnpm install --frozen-lockfile
 
-echo "🏗️ Running monorepo build..."
+echo "🏗️ Running monorepo build with increased Node memory..."
+export NODE_OPTIONS="--max_old_space_size=2048"
 pnpm run build
 
 echo "✅ Build script completed successfully."
