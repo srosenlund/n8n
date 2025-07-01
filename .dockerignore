@@ -1,19 +1,41 @@
+# Ignore markdown and env files everywhere
 **/*.md
 **/.env
-.cache
-assets
-node_modules
-packages/node-dev
-packages/**/node_modules
-packages/**/dist
-packages/**/.turbo
-packages/**/*.test.*
-.git
-.github
-!.github/scripts
+
+# Build artifacts and logs
+dist
+*.log
 *.tsbuildinfo
+
+# Node modules (both root and packages)
+node_modules
+packages/**/node_modules
+
+# Build outputs
+packages/**/dist
+.cache
+packages/**/.turbo
 docker/compose
 docker/**/Dockerfile
+
+# Git and config files
+.git
+.gitignore
+.github
+!.github/scripts
 .vscode
+
+# Test folders and workflows
 cypress
 test-workflows
+packages/**/*.test.*
+
+# Optional assets
+assets
+
+# Docker-compose files
+docker-compose.yml
+
+# Additional patterns from your list (already covered in most cases, but adding for clarity)
+Dockerfile
+*.env
